@@ -8,8 +8,10 @@ import { IoSearchSharp } from "react-icons/io5";
 const Navbar = () => {
  let [cartshow, setCartshow] = useState(false)
  let [cartacc, setCartacc] = useState(false)
+ let [cartplus, setCartplus] = useState(false)
  let categoryRef = useRef()
  let cartaccRef = useRef()
+ let cartplusRef = useRef()
  
  useEffect(()=> {
 document.addEventListener("click", (e)=>{
@@ -23,9 +25,14 @@ if(cartaccRef.current.contains(e.target) == true){
 }else{
     setCartacc(false) 
 }
+if(cartplusRef.current.contains(e.target) == true){
+    setCartplus(!cartplus)
+}else{
+    setCartplus(false) 
+}
 })
 
- },[cartshow,cartacc])
+ },[cartshow,cartacc,cartplus])
   return (
   
     <nav>
@@ -69,9 +76,19 @@ if(cartaccRef.current.contains(e.target) == true){
                     <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in"> <a href="#">Login</a> </li> 
                     </ul>
                 </div>}
-                <div className="">
+              
+                <div className="" ref={cartplusRef}>
                 <FaCartPlus />
-                </div>
+                </div> 
+                    {cartplus &&
+                    <div className="bg-[#8c8989] w-[200px] absolute top-12 right-0">
+                     <ul>
+                    <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in"> <a href="#">Accessories</a> </li> 
+                    <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in"> <a href="#">Shoes</a> </li> 
+                    </ul>
+
+                    </div>
+                    }
                 </div>
 
             </div>
