@@ -9,7 +9,7 @@ const Header = () => {
 <Container>
     <Flex className="justify-between">
     <div className="">
-        <img src={Logo} alt="logo" />
+        <img className="w-24 h-6" src={Logo} alt="logo" />
     </div>
     <div className="">
        <ul className="flex gap-x-8">

@@ -4,6 +4,8 @@ import Flex from './Flex'
 import { FaBars, FaCartPlus,FaUser } from "react-icons/fa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { IoSearchSharp } from "react-icons/io5";
+import Watch from "../assets/black watch.webp"
+import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
  let [cartshow, setCartshow] = useState(false)
@@ -36,15 +38,15 @@ if(cartplusRef.current.contains(e.target) == true){
   return (
   
     <nav>
-        <Container>
+        <Container className="bg-slate-600 w-full">
             <Flex className="items-center">
             <div className="w-1/4 relative">
                 <div className="flex items-center" ref={categoryRef}>
                 <FaBars />
-                    <p className="pl-3">Shop by Category</p>
+                    <p className="pl-3 font-dm text-slate-800">Shop by Category</p>
                 </div>
                 {cartshow && 
-                <div className="bg-[#8d8989] absolute top-10 left-0 w-full">
+                <div className="bg-slate-400 absolute top-10 left-0 w-full">
                     <ul>
                         <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in">Accessories</li>
                         <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in">Furniture</li>
@@ -70,7 +72,7 @@ if(cartplusRef.current.contains(e.target) == true){
                 <TiArrowSortedDown />
                 </div>
                 {cartacc &&
-                <div className="bg-[#8c8989] w-[200px] absolute top-12 right-0">
+                <div className="bg-slate-400 w-[200px] absolute top-12 right-0">
                     <ul>
                     <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in"> <a href="#">My Account</a> </li> 
                     <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in"> <a href="#">Login</a> </li> 
@@ -81,12 +83,30 @@ if(cartplusRef.current.contains(e.target) == true){
                 <FaCartPlus />
                 </div> 
                     {cartplus &&
-                    <div className="bg-[#8c8989] w-[200px] absolute top-12 right-0">
-                     <ul>
-                    <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in"> <a href="#">Accessories</a> </li> 
-                    <li className="text-[rgba(255,255,255,0.72)] py-2 pl-3 hover:text-white font-dm hover:pl-6 duration-300 ease-in"> <a href="#">Shoes</a> </li> 
-                    </ul>
-
+                    <div className="w-[350px] py-8 bg-slate-200 border-2 border-gray-300 absolute top-9 right-0">
+                        <div className="flex gap-1">
+                            <div className="w-2/6">
+                                <img src={Watch} alt="watch" class="w-[60px] h-[60px] ml-3 hover:w-[80px] hover:h-[80px]" />
+                            </div>
+                            <div className="w-3/6">
+                                <h6 className="font-dm text-[12px] text-slate-900 font-semibold">Black Smart Watch</h6>
+                                <p className="font-dm text-[14px] text-slate-900 py-2">$44.00</p>
+                            </div>
+                            <div className="w-1/6">
+                                <p><RxCross2 /></p>
+                            </div>
+                        </div>
+                        <div className="w-full text-center"> 
+                                <span className="font-dm text-black ">Sub Total: $44.00</span>
+                                </div>
+                                <div className="flex justify-around mt-8">
+                                    <div className="">  
+                                    <button className="border-solid bg-slate-400 rounded items-center font-dm text-sm px-3 py-1 hover:text-white"><a href="">View Chart</a></button>
+                                    </div>
+                                    <div className=""> 
+                                    <button className="border-solid border-2 bg-slate-400 rounded items-center font-dm text-sm px-3 py-1 hover:text-white"><a href="">Checkout</a></button>
+                                    </div>
+                                </div>
                     </div>
                     }
                 </div>
