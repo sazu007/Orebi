@@ -20,7 +20,7 @@ const Header = () => {
         <img className="w-24 h-6" src={Logo} alt="logo" />
     </div>
     <div className="">
-       <ul className={`lg:flex gap-x-8 absolute left-0 top-0 lg:static ${show == true ? "bg-[#F5F5F5] text-center top-[60px] w-full duration-300 ease-in z-50" : "top-[-200px] w-full"}`}>
+       <ul className={`lg:flex gap-x-8 absolute left-0 top-0 lg:static ${show == true ? "bg-[#F5F5F5] text-center w-full duration-300 ease-in  !top-[50px] z-50" : "!top-[50px] duration-300 ease-in left-[-200px]"}`}>
         <li className='font-dm font-normal text-base text-[#767676] hover:text-[#222]'>
             <a href="#">Home</a></li>
         <li className='font-dm font-normal text-base text-[#767676] hover:text-[#222]'> 
