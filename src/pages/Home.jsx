@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import Saleitem from '../components/Saleitem'
 import Newarrivals from '../components/Newarrivals'
+import Phone from '../components/Phone'
+import Special from '../components/Special'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -13,6 +16,9 @@ const Home = () => {
      <Banner/>
      <Saleitem/>
      <Newarrivals/>
+     <Phone/>
+     <Special/>
+    <Footer/>
     </div>
   )
 }
