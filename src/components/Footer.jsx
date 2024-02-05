@@ -1,12 +1,13 @@
 import React from 'react'
 import Container from './Container'
 import Logo from "../assets/Logo.png"
+import { FaFacebookF,FaLinkedinIn,FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
   <div className="py-10">
     <Container>
-        <div className="flex justify-between">
+        <div className="flex justify-between pl-10">
             <div className="w-[12%] list-none">
                 <ul> 
                 <li className="text-base font-dm font-semibold text[#262626] py-4">MENU</li>
@@ -42,14 +43,24 @@ const Footer = () => {
             </div>
             <div className="w-[35%] list-none">
                 <ul className='pl-12'> 
-                <li className="text-base font-dm font-bolt text-[#262626] py-2">(052) 611-5711</li>
-                <li className="text-base font-dm font-bolt text-[#262626]">company@domain.com</li>
-                <li className="text-base font-dm font-bolt text-[#262626] py-2">575 Crescent Ave. Quakertown, PA 18951</li>
+                <li className="text-base font-dm font-bold text-[#262626] py-2">(052) 611-5711</li>
+                <li className="text-base font-dm font-bold text-[#262626]">company@domain.com</li>
+                <li className="text-base font-dm  text-[#262626] py-2">575 Crescent Ave. Quakertown, PA 18951</li>
               
                 </ul>
             </div>
             <div className="w-[25%] list-none">
                 <img className="w-[110px] h-[29px]" src={Logo} alt="" />
+            </div>
+        </div>
+        <div className=" flex justify-between py-10">
+            <div className="flex gap-6 pl-10">
+            <p className="text-xl cursor-pointer"><a href="#"> <FaFacebookF /></a></p>
+            <p className="text-xl cursor-pointer"> <a href="#"><FaLinkedinIn /></a></p>
+            <p className="text-xl cursor-pointer"><a href="#"><FaInstagram /></a></p>
+            </div>
+            <div className="">
+                <h3 className="text-base font-dm text-[#262626]">2020 Orebi Minimal eCommerce Figma Template by Adveits</h3>
             </div>
         </div>
     </Container>
