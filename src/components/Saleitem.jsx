@@ -9,14 +9,14 @@ const Saleitem = () => {
        <container>
         <flex className="">
             <div className="flex justify-around">
-                <div className="w-[48%]">
+                <div className="w-[47%]">
                 <img src={Saleone} alt="saleone" />
                 </div>
-                <div className="w-[48%]">
+                <div className="w-[47%]">
                     <div className="">
                         <img src={Saletwo} alt="" />
                     </div>
-                    <div className="pt-9">
+                    <div className="pt-2 lg:pt-9">
                     <img src={Salethree} alt="" />
                     </div>
                 </div>

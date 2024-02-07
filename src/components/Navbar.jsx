@@ -40,7 +40,7 @@ if(cartplusRef.current.contains(e.target) == true){
     <nav className="bg-[#F5F5F3] py-4">
         <Container className="bg- w-full">
             <Flex className="items-center">
-            <div className="w-1/4 relative">
+            <div className="w-[27%] pl-2 lg:pl-0 relative">
                 <div className="flex items-center cursor-pointer" ref={categoryRef}>
                 <FaBars />
                     <p className="pl-3 font-dm text-slate-800 cursor-pointer">Shop by Category</p>
@@ -57,7 +57,7 @@ if(cartplusRef.current.contains(e.target) == true){
                     </ul>
                 </div>}
             </div>
-            <div className="w-1/2">
+            <div className="w-[47%] pl-3 lg:pl-0">
             <div className="relative"> 
             <input type="search" placeholder='search......' className="w-full border-2 border-[#313131] outline-0 py-3 px-2"/>
             <div className="absolute top-5 right-5" > 
@@ -65,7 +65,7 @@ if(cartplusRef.current.contains(e.target) == true){
             </div>
             </div>
             </div>
-            <div className="w-1/4">
+            <div className="w-[22%]">
                 <div className="flex justify-end gap-x-3 relative"> 
                 <div className="flex cursor-pointer" ref={cartaccRef}>
                 <FaUser />
@@ -79,7 +79,7 @@ if(cartplusRef.current.contains(e.target) == true){
                     </ul>
                 </div>}
               
-                <div className="cursor-pointer" ref={cartplusRef}>
+                <div className="cursor-pointer pr-3 lg: pr-0" ref={cartplusRef}>
                 <FaCartPlus />
                 </div> 
                     {cartplus &&

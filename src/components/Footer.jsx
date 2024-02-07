@@ -5,62 +5,68 @@ import { FaFacebookF,FaLinkedinIn,FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-  <div className="py-10">
+  <div className="py-2 lg:py-10">
     <Container>
-        <div className="flex justify-between pl-10">
-            <div className="w-[12%] list-none">
-                <ul> 
+        
+        <div className="lg:flex lg:justify-evenly lg:pl-10">
+            <div className="flex lg:flex-none justify-evenly lg:justify-between lg:gap-10">  
+            <div className="w-[30%] lg:w-[15%] list-none">
+                <ul className=""> 
                 <li className="text-base font-dm font-semibold text[#262626] py-4">MENU</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Home</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Shop</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">About</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Contact</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Journal</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2">Home</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2">Shop</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2">About</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2">Contact</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2">Journal</li>
               
                 </ul>
             </div>
-            <div className="w-[12%] list-none">
-                <ul> 
+            <div className="w-[30%] lg:w-[15%] list-none lg:px-8">
+            <ul className=""> 
                 <li className="text-base font-dm font-semibold text[#262626] py-4">SHOP</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Category 1</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Category 2</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Category 3</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Category 4</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Category 5</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2 ml-[-12px]">Category-1</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2 ml-[-12px]">Category-2</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2 ml-[-12px]">Category-3</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2 ml-[-12px]">Category-4</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2 ml-[-12px]">Category-5</li>
               
                 </ul>
             </div>
-            <div className="w-[12%] list-none">
-                <ul> 
+            <div className="w-[30%] lg:w-[40%] list-none lg:px-8">
+            <ul className=""> 
                 <li className="text-base font-dm font-semibold text[#262626] py-4">HELP</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Privacy Policy</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Terms & Conditions</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Special E-shop</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Shipping</li>
-                <li className="text-sm font-dm text-[#6D6D6D] py-2">Secure Payments</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Privacy Policy</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg;ml-0">Terms & Conditions</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Special E-shop</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Shipping</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Secure Payments</li>
               
                 </ul>
             </div>
-            <div className="w-[35%] list-none">
-                <ul className='pl-12'> 
+            </div>
+
+            <div className="flex justify-between py-10 lg:py-0">  
+            <div className="w-[72%] lg:w-[35%] list-none">
+                <ul className='pl-5 px-4 lg:px-0 lg:pl-12'> 
                 <li className="text-base font-dm font-bold text-[#262626] py-2">(052) 611-5711</li>
                 <li className="text-base font-dm font-bold text-[#262626]">company@domain.com</li>
                 <li className="text-base font-dm  text-[#262626] py-2">575 Crescent Ave. Quakertown, PA 18951</li>
               
                 </ul>
             </div>
-            <div className="w-[25%] list-none">
-                <img className="w-[110px] h-[29px]" src={Logo} alt="" />
+            <div className="w-[15%] list-none">
+                <img className="w-[110px] h-[29px] ml-[-30px] lg:ml-0 mt-3 lg:mt-0" src={Logo} alt="" />
+            </div>
             </div>
         </div>
-        <div className=" flex justify-between py-10">
-            <div className="flex gap-6 pl-10">
+        <div className=" lg:flex justify-between py-2 lg:py-10">
+            <div className="flex gap-6 justify-center lg:static lg:pl-10">
             <p className="text-xl cursor-pointer"><a href="#"> <FaFacebookF /></a></p>
             <p className="text-xl cursor-pointer"> <a href="#"><FaLinkedinIn /></a></p>
             <p className="text-xl cursor-pointer"><a href="#"><FaInstagram /></a></p>
             </div>
             <div className="">
-                <h3 className="text-base font-dm text-[#262626]">2020 Orebi Minimal eCommerce Figma Template by Adveits</h3>
+                <h3 className=" text-sm lg:text-base font-dm text-[#262626] text-center lg:static px-6 lg:px-0 py-1 lg:py-0">2020 Orebi Minimal eCommerce Figma Template by Adveits</h3>
             </div>
         </div>
     </Container>

@@ -16,8 +16,8 @@ const Header = () => {
     <header className='py-6'> 
 <Container>
     <Flex className="justify-between">
-    <div className="">
-        <img className="w-24 h-6" src={Logo} alt="logo" />
+    <div className="px-6 animate-bounce">
+        <img className="w-24 h-6 lg:w-32 lg:h-10" src={Logo} alt="logo" />
     </div>
     <div className="">
        <ul className={`lg:flex gap-x-8 absolute left-0 top-0 lg:static ${show == true ? "bg-[#F5F5F5] text-center w-full duration-300 ease-in  !top-[50px] z-50" : "!top-[50px] duration-300 ease-in left-[-200px]"}`}>
@@ -34,7 +34,7 @@ const Header = () => {
             <a href="#">Journal</a></li>
        </ul>
         </div>
-        <div className="lg:hidden" onClick={handleShow}>
+        <div className="lg:hidden pr-10" onClick={handleShow}>
         {show ? <RxCross2 /> : <FaBars />}
         </div>
             </Flex>

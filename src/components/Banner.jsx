@@ -17,7 +17,7 @@ const Banner = () => {
                 padding: "10px",
                 position: "absolute",
                 top:"50%",
-                left:"50px",
+                left:"10px",
                 transform: "translateY(-50%)",
               }}
             >
@@ -27,10 +27,10 @@ const Banner = () => {
           customPaging: i => (
             <div
               style={{
-                width: "30px",
+                width: "25px",
                 color: "#262626",
-                padding: "20px 0",
-                borderRight: "3px #fff solid"
+                padding: "8px 0",
+                borderRight: "3px #fff  solid"
               }}
             >
               0{i + 1}
@@ -40,13 +40,13 @@ const Banner = () => {
   return (
     <> 
 <Slider {...settings}>
-    <div className="">
+    <div className=" w-[95%]">
         <img src={Banimg} alt="" />
     </div>
-    <div className="">
+    <div className="w-[95%]">
         <img src={Banimg} alt="" />
     </div>
-    <div className="">
+    <div className="w-[95%]">
         <img src={Banimg} alt="" />
     </div>
 </Slider>
