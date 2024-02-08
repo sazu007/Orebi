@@ -8,9 +8,9 @@ const Footer = () => {
   <div className="py-2 lg:py-10">
     <Container>
         
-        <div className="lg:flex lg:justify-evenly lg:pl-10">
-            <div className="flex lg:flex-none justify-evenly lg:justify-between lg:gap-10">  
-            <div className="w-[30%] lg:w-[15%] list-none">
+        <div className="lg:flex justify-evenly">
+            <div className="flex lg:flex-none justify-evenly lg:justify-around lg:gap-10">  
+            <div className="w-[25%] lg:w-[8%] list-none">
                 <ul className=""> 
                 <li className="text-base font-dm font-semibold text[#262626] py-4">MENU</li>
                 <li className="text-sm font-dm text-[#6D6D6D] lg:py-2">Home</li>
@@ -21,7 +21,7 @@ const Footer = () => {
               
                 </ul>
             </div>
-            <div className="w-[30%] lg:w-[15%] list-none lg:px-8">
+            <div className="w-[25%] lg:w-[8%] list-none lg:px-8">
             <ul className=""> 
                 <li className="text-base font-dm font-semibold text[#262626] py-4">SHOP</li>
                 <li className="text-sm font-dm text-[#6D6D6D] lg:py-2 ml-[-12px]">Category-1</li>
@@ -32,11 +32,11 @@ const Footer = () => {
               
                 </ul>
             </div>
-            <div className="w-[30%] lg:w-[40%] list-none lg:px-8">
+            <div className="w-[25%] lg:w-[30%] list-none lg:px-8">
             <ul className=""> 
-                <li className="text-base font-dm font-semibold text[#262626] py-4">HELP</li>
+                <li className="text-base font-dm font-semibold text[#262626] py-4 lg:w-[300px]">HELP</li>
                 <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Privacy Policy</li>
-                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg;ml-0">Terms & Conditions</li>
+                <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Terms & Conditions</li>
                 <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Special E-shop</li>
                 <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Shipping</li>
                 <li className="text-sm font-dm text-[#6D6D6D] lg:py-2  ml-[-30px] lg:ml-0">Secure Payments</li>
@@ -45,27 +45,27 @@ const Footer = () => {
             </div>
             </div>
 
-            <div className="flex justify-between py-10 lg:py-0">  
-            <div className="w-[72%] lg:w-[35%] list-none">
+            <div className="flex justify-evenly lg:px-6 py-10 lg:py-0">  
+            <div className="w-[72%] lg:w-[45%] list-none">
                 <ul className='pl-5 px-4 lg:px-0 lg:pl-12'> 
-                <li className="text-base font-dm font-bold text-[#262626] py-2">(052) 611-5711</li>
+                <li className="text-base font-dm font-bold text-[#262626] lg:py-2">(052) 611-5711</li>
                 <li className="text-base font-dm font-bold text-[#262626]">company@domain.com</li>
-                <li className="text-base font-dm  text-[#262626] py-2">575 Crescent Ave. Quakertown, PA 18951</li>
+                <li className="text-base font-dm  text-[#262626] lg:py-2">575 Crescent Ave. Quakertown, PA 18951</li>
               
                 </ul>
             </div>
-            <div className="w-[15%] list-none">
-                <img className="w-[110px] h-[29px] ml-[-30px] lg:ml-0 mt-3 lg:mt-0" src={Logo} alt="" />
+            <div className="w-[10%] lg:w-[10%] list-none">
+                <img className="w-[110px] h-[29px] ml-[-30px] lg:ml-10 mt-10 animate-bounce" src={Logo} alt="" />
             </div>
             </div>
         </div>
         <div className=" lg:flex justify-between py-2 lg:py-10">
-            <div className="flex gap-6 justify-center lg:static lg:pl-10">
-            <p className="text-xl cursor-pointer"><a href="#"> <FaFacebookF /></a></p>
-            <p className="text-xl cursor-pointer"> <a href="#"><FaLinkedinIn /></a></p>
-            <p className="text-xl cursor-pointer"><a href="#"><FaInstagram /></a></p>
+            <div className="w-[95%] lg:w-[30%] flex gap-6 justify-center lg:static lg:pl-10">
+            <p className="text-base lg:text-xl cursor-pointer"><a href="#"> <FaFacebookF /></a></p>
+            <p className="text-base lg:text-xl cursor-pointer"> <a href="#"><FaLinkedinIn /></a></p>
+            <p className="text-base lg:text-xl cursor-pointer"><a href="#"><FaInstagram /></a></p>
             </div>
-            <div className="">
+            <div className="w-[95%] lg:w-[60%]">
                 <h3 className=" text-sm lg:text-base font-dm text-[#262626] text-center lg:static px-6 lg:px-0 py-1 lg:py-0">2020 Orebi Minimal eCommerce Figma Template by Adveits</h3>
             </div>
         </div>
