@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState,useEffect } from 'react'
+import { useState,useEffect } from 'react';
 import Container from './Container'
 import Slider from "react-slick";
 import { FaCartPlus,FaHeart  } from "react-icons/fa";
@@ -10,7 +10,7 @@ function SampleNextArrow(props) {
     const { style, onClick } = props;
     return (
       <div
-        style={{position: 'absolute', right: '25px', top: '150px', height: '30px', width: '30px', borderRadius:'50%', background:'#979797', zIndex:'999', transform:'-50', translate:'-50', lineHeight:'30px', textAlign:'center !', fontSize:'25px', color:'white'}}
+        style={{position: 'absolute', right: '0px', top: '150px', height: '40px', width: '40px', borderRadius:'50%', background:'#979797', zIndex:'999', transform:'-50', translate:'-50', lineHeight:'30px', textAlign:'center !', fontSize:'25px', color:'white'}}
         onClick={onClick}
       ><MdArrowForwardIos className=' ml-1 mt-1 animate-ping text-gray-600'/> </div>
     );
@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
     const { style, onClick } = props;
     return (
       <div
-        style={{position: 'absolute', left: '3px', top: '150px', height: '30px', width: '30px', borderRadius:'50%', background:'#979797', zIndex:'999', transform:'-50', translate:'-50', lineHeight:'30px !',  textAlign:'center !', fontSize:'25px', color:'white'}}
+        style={{position: 'absolute', left: '-15px', top: '150px', height: '40px', width: '40px', borderRadius:'50%', background:'#979797', zIndex:'999', transform:'-50', translate:'-50', lineHeight:'30px !',  textAlign:'center !', fontSize:'25px', color:'white'}}
         onClick={onClick}
       ><MdOutlineArrowBackIosNew className='mt-1 ml-1 animate-ping text-gray-600'/></div>
     );
@@ -30,12 +30,24 @@ const Newarrivals = () => {
     var settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 4,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+
+        responsive: [
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+            }
+          },
+            ]
       };
     let [info, setInfo] = useState([])
+
 
     useEffect(()=>{
         let getdata = () =>{
@@ -55,9 +67,9 @@ const Newarrivals = () => {
                 <div className='!w-[95%]'>
                     <div className="py-3">
                     <div className="relative group">
-                    <img src={item.thumbnail} className='h-[300px] w-[95%] lg:w-full' alt="" />
-                    <div className="absolute bottom-0 overflow-y-hidden left-0 w-full h-[0px] opacity-0 duration-300 ease-in bg-[#ffffff] group-hover:h-[150px]  group-hover:opacity-100">
-                        <div className="flex justify-end items-center h-full ">
+                    <img src={item.thumbnail} className=' w-full' alt="" />
+                    <div className="absolute bottom-0 overflow-hidden left-0 w-[100%] duration-300 ease-in bg-[#ffffff] h-[0px] opacity-0 group-hover:h-[150px]  group-hover:opacity-100 ">
+                        <div className="flex items-center h-full justify-end ">
                             <ul className=" px-11 lg:px-6 text-end">
                                 <li className='font-dm font-semibolt text-[16px] text-[#222]'>Add to Wish List<FaHeart className="inline-block ml-3"/> </li>
                                 <li className='mt-3 font-dm font-semibolt text-end text-[16px] text-[#222]'>Compare<FaCodeCompare className="inline-block ml-3"/></li>
