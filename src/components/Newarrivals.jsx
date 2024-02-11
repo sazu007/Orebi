@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
 import Container from './Container'
+import Flex from "./Flex"
 import Slider from "react-slick";
 import { FaCartPlus,FaHeart  } from "react-icons/fa";
 import { FaCodeCompare } from "react-icons/fa6";
@@ -37,15 +38,32 @@ const Newarrivals = () => {
 
         responsive: [
           {
-            breakpoint: 576,
+            breakpoint: 1024,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
+              slidesToShow: 3,
+              slidesToScroll: 3,
               infinite: true,
+              dots: true
             }
           },
-            ]
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
       };
+
     let [info, setInfo] = useState([])
 
 
@@ -62,6 +80,7 @@ const Newarrivals = () => {
     <div className=' lg:py-8 pl-2'>
         <Container>
             <h2 className='font-dm font-bold text-[33px] pl-3 lg:pl-0 lg:text-[40px] text-[#262626]'>New Arrival</h2>
+            <Flex> 
                 <Slider {...settings}> 
                     {info.map((item)=>(
                 <div className='!w-[95%]'>
@@ -78,7 +97,7 @@ const Newarrivals = () => {
                         </div>
                     </div>
                     </div>
-                    <div className="flex justify-between pt-3 pl-2 pr-2">
+                    <div className="flex justify-between pt-3">
                         <h3 className='font-dm font-bold text-[16px] text-[#262626]'>{item.title}</h3>
                         <p className='font-dm font-bold text-[16px] text-[#262626]'>{item.price}</p>
                     </div>
@@ -86,6 +105,7 @@ const Newarrivals = () => {
                 </div>
                    ))}
                    </Slider>
+                   </Flex>
         </Container>
     </div>
   )

@@ -7,6 +7,8 @@ import Newarrivals from '../components/Newarrivals'
 import Phone from '../components/Phone'
 import Special from '../components/Special'
 import Footer from '../components/Footer'
+import Extra from '../components/Extra'
+import Newarrive from '../components/Newarrive'
 
 const Home = () => {
   return (
@@ -15,10 +17,12 @@ const Home = () => {
      <Navbar/>
      <Banner/>
      <Saleitem/>
-     <Newarrivals/>
+     <Newarrive/>
+     {/* <Newarrivals/> */}
      <Phone/>
      <Special/>
     <Footer/>
+    <Extra/>
     </div>
   )
 }
