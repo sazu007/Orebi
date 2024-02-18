@@ -79,7 +79,6 @@ const Newarrive = () => {
     <Container>
         <h2 className='font-dm font-bolt text-[40px]'>New Arrival</h2>
             <Slider {...settings}> 
-            {/* <div className="">   */}
                 {info.map((item)=>(
             <div className="!w-[95%]">
 
@@ -104,7 +103,6 @@ const Newarrive = () => {
                 </div>
             </div>
                       ))}
-         {/* </div> */}
          </Slider>
         
     </Container>
