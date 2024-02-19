@@ -1,12 +1,33 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import { createContext } from 'react'
+import axios from 'axios';
+// import Products from './../pages/Product';
+
 
 let Apidata = createContext()
 
-const ContextApi = () => {
+const ContextApi = ({children}) => {
+let [info, setInfo] = useState([])
+
+useEffect(() =>{
+  let getdata = () =>{
+      axios.get("https://dummyjson.com/products").then((respone)=>{
+     setInfo(respone.data.products);
+      })
+  }
+  getdata()
+},[])
+
+
+
+
   return (
-    <div>ContextApi</div>
-  )
+<>
+<Apidata.Provider value={info}>{children}</Apidata.Provider>
+
+</>
+
+    )
 }
 
-export default ContextApi
+export {ContextApi,Apidata} 
