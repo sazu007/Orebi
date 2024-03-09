@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Container from '../components/Container';
 import Flex from '../components/Flex';
 import { IoIosStar,IoIosStarHalf  } from "react-icons/io";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaMinus,FaPlus } from "react-icons/fa6";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../components/slice/singleSlice';
 
 
 const ProductDetails = () => {
+    let dispatch = useDispatch()
 
     let [data,setData] = useState([])
     let productId = useParams()
@@ -24,6 +27,10 @@ const ProductDetails = () => {
     useEffect(()=>{
       dataId()
     },[])
+
+    let handleproduct = (item) =>{
+        dispatch(addToCart({...item, qun:1}))
+    }
 
   return (
 <>
@@ -87,11 +94,13 @@ const ProductDetails = () => {
             <button className=' border-2 border-solid border-gray-600 px-24 py-4 font-dm font-bold text-[18px] text-[#262626] hover:text-white hover:bg-black duration-500 text-center'>Add to Wish List</button>
             </div>
             <div className=""> 
-            <button className=' border-2 border-solid border-gray-600 px-24 py-4 font-dm font-bold text-[18px] text-[#262626]  hover:text-white hover:bg-black duration-500'>Add to Cart</button>
+            <Link to="/cart"> 
+            <button onClick={()=>handleproduct(data)} className=' border-2 border-solid border-gray-600 px-24 py-4 font-dm font-bold text-[18px] text-[#262626]  hover:text-white hover:bg-black duration-500'>Add to Cart</button>
+            </Link>  
             </div>
         </div>
             <div className="py-8">
-                <h2 className='ont-dm font-bold text-[22px] text-[#262626]'>FEATURES  & DETAILS</h2>
+                <h2 className='font-dm font-bold text-[22px] text-[#262626]'>FEATURES  & DETAILS</h2>
                 <h3 className='ont-dm font-bold text-[22px] text-[#262626] py-6'>SHIPPING & RETURNS</h3>
                 <p className='font-dm font-normal text-[18px] text-[#262626] w-[780px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>

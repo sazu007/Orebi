@@ -29,7 +29,7 @@ const Header = () => {
            <Link to="/product">Shop</Link>
         </li>
         <li className='font-dm font-normal text-base text-[#767676] hover:text-[#222]'>
-            <a href="#">About</a></li>
+            <Link to="/about">About</Link></li>
         <li className='font-dm font-normal text-base text-[#767676] hover:text-[#222]'>
             <a href="#">Contact</a></li>
         <li className='font-dm font-normal text-base text-[#767676] hover:text-[#222]'>
