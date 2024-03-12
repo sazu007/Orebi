@@ -5,7 +5,7 @@ import { FaFacebookF,FaLinkedinIn,FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-  <div className="py-2 lg:py-10">
+  <div className="py-2 lg:py-10 bg-[#F5F5F3]">
     <Container>
         
         <div className="lg:flex justify-evenly">
