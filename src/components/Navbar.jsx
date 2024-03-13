@@ -6,9 +6,12 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { IoSearchSharp } from "react-icons/io5";
 import Watch from "../assets/black watch.webp"
 import { RxCross2 } from "react-icons/rx";
+import { UseSelector, useSelector } from 'react-redux';
 
 const Navbar = () => {
- let [cartshow, setCartshow] = useState(false)
+let data = useSelector((state)=>state.single.cartItem)
+
+let [cartshow, setCartshow] = useState(false)
  let [cartacc, setCartacc] = useState(false)
  let [cartplus, setCartplus] = useState(false)
  let categoryRef = useRef()
@@ -84,14 +87,16 @@ if(cartplusRef.current.contains(e.target) == true){
                 </div> 
                     {cartplus &&
                     <div className="absolute top-9 right-0 z-50"> 
+                    {data.map((item)=>(
+
                     <div className="w-[350px] py-8 bg-[#F5F5F3] border-2 border-gray-300">
                         <div className="flex gap-1">
                             <div className="w-2/6">
-                                <img src={Watch} alt="watch" class="w-[60px] h-[60px] ml-3 hover:w-[120px] hover:h-[120px]" />
+                                <img className='h-[100px] w-[100px]' src={item.thumbnail} alt="watch" class="w-[60px] h-[60px] ml-3 hover:w-[120px] hover:h-[120px]" />
                             </div>
                             <div className="w-3/6">
-                                <h6 className="font-dm text-[16px] text-slate-900 font-semibold pl-3">Black Smart Watch</h6>
-                                <p className="font-dm text-[16px] text-slate-900 py-2 pl-3">$44.00</p>
+                                <h6 className="font-dm text-[16px] text-slate-900 font-semibold pl-3">{item.title}</h6>
+                                <p className="font-dm text-[16px] text-slate-900 py-2 pl-3">${item.price}</p>
                             </div>
                             <div className="w-1/6">
                                 <p><RxCross2 /></p>
@@ -103,6 +108,7 @@ if(cartplusRef.current.contains(e.target) == true){
                                 <a className="w-[148px] h-[50px] border-2 border-[#262626] inline-block leading-10 text-center font-dm font-normal text-base hover:bg-[#262626] hover:text-white"href="#">View Cart</a>   
                                   </div>
                     </div>
+                    ))}
                     </div>
                     }
                 </div>

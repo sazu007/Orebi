@@ -6,6 +6,7 @@ import Flex from '../components/Flex';
 import { IoIosStar,IoIosStarHalf  } from "react-icons/io";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaMinus,FaPlus } from "react-icons/fa6";
+import { FaRegStar } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../components/slice/singleSlice';
 
@@ -32,13 +33,21 @@ const ProductDetails = () => {
         dispatch(addToCart({...item, qun:1}))
     }
 
+    let clientRating = Array.from({length: 5},(elm, index)=>{
+        let number = index + 0.5;
+        return(
+            data.rating  >= index + 1 ?<IoIosStar/> : data.rating >= number ? <IoIosStarHalf /> : <FaRegStar/>
+        )
+    })
+
+
   return (
 <>
 <Container> 
     <Flex className="justify-between"> 
     {data?.images?.map((item)=>(
-        <div className="w-[32%]"> 
-    <img src={item} alt="" className='w-full' />
+        <div className="w-[32%] h-[400px]"> 
+    <img src={item} alt="" className='w-full h-full' />
     </div>
 ))}
 
@@ -47,16 +56,13 @@ const ProductDetails = () => {
     <h2 className='font-dm font-bold text-[39px] text-[#262626]'>Product</h2>
     <div className="">  
     <div className="flex items-center">
-    <IoIosStar />
-    <IoIosStar />
-    <IoIosStar />
-    <IoIosStar />
-    <IoIosStarHalf />
-    <span className='pl-8 font-dm font-normal text-[14px] text-[#262626] py-6'>1 Review</span>
+        {clientRating}
+
+   <span className='pl-8 font-dm font-normal text-[14px] text-[#262626] py-6'>1 Review</span>
     </div>
     <div className="flex"> 
-        <del className='font-dm font- text-[18px] font-normal text-[#262626]'>$88.00</del>
-        <h4 className='font-dm font- text-[20px] font-bold text-[#262626] pl-6'>$44.00</h4>
+        <del className='font-dm font- text-[18px] font-normal text-[#262626]'>$ {data.price}</del>
+        <h4 className='font-dm font- text-[20px] font-bold text-[#262626] pl-6'>$ {data.price}</h4>
     </div>
 
     <div className="flex gap-12 items-center py-8">
