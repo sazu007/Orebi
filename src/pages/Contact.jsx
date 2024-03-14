@@ -3,6 +3,7 @@ import Container from '../components/Container'
 import Flex from '../components/Flex'
 import { IoIosArrowForward } from "react-icons/io";
 import {Link } from 'react-router-dom';
+import Map from "../assets/map.png";
 
 
 
@@ -30,7 +31,11 @@ const Contact = () => {
                 <h3 className='font-dm text-base font-bold text-[#262626] border-1 py-3 border-gray-300'>Massage</h3>
                 <input type="text" placeholder='Your name here'/>
             </div>
-            
+
+           <button className="border-2 border-[#d4cbcb] py-2 px-14 mt-10 mb-10 font-dm text-lg font-normal hover:text-white hover:bg-black duration-300">Post</button>
+            <div className='py-10 items-center'>
+                <img className='h-[350px] w-[95%]' src={Map} alt="" />
+            </div>
     </Container>
     </div>
       
