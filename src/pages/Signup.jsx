@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './../components/Container';
 import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
@@ -6,6 +6,21 @@ import { TiArrowSortedDown } from "react-icons/ti";
 
 
 const Signup = () => {
+    let [fullName, setFullName]= useState("");
+    let [email, setEmail]= useState("");
+    let [passwards, setPasswards]= useState("");
+    let handleFullname =(e) =>{
+    setFullName(e.target.value);
+    };
+    let handleEmail =(e) =>{
+    setEmail(e.target.value);
+    };
+    let handlepassword =(e) =>{
+    setPasswards(e.target.value);
+    };
+    let handleSubmit =(e)=>{
+    e.preventDefault();
+    };
   return (
 <>
 <div className=""> 
@@ -26,7 +41,8 @@ const Signup = () => {
         <div className="flex w-full">
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>First Name</h3>
-                <input  className="py-3 w-[400px]"  type="text" placeholder='First Name'/>
+                <input  className="py-3 w-[400px]"  type="text" placeholder='First Name' onChange={handleFullname}/>
+                
             </div>
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>Last Name</h3>
@@ -37,7 +53,8 @@ const Signup = () => {
         <div className="flex w-full">
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>E-mail address</h3>
-                <input className="py-3 w-[400px]" type="email" placeholder='company@domain.com'/>
+                <input className="py-3 w-[400px]" type="email" placeholder='company@domain.com' onchange={handleEmail}/>
+                
             </div>
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>Telephone</h3>
@@ -92,7 +109,8 @@ const Signup = () => {
         <div className="flex w-full">
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>Password</h3>
-                <input className="py-3 w-[400px] font-dm text-base" type="passward" placeholder='passward'/>
+                <input className="py-3 w-[400px] font-dm text-base" type="passward" placeholder='passward'  oncharge={handlepassword}/>
+           
             </div>
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>Repeat Passward</h3>
@@ -112,7 +130,12 @@ const Signup = () => {
             <span className='font-dm font-normal text-[16px] text-[#262626]'>No</span>
     </div>
     <div className="py-10">
-        <button className='font-dm font-semi-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-1 hover:text-white hover:bg-black duration-300'>Log in</button>
+        <div onClick={handleSubmit}> 
+        <button className='font-dm font-semi-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-1 hover:text-white hover:bg-black duration-300'><Link to="/login">Sign in</Link></button>
+        </div>
+   <div className="py-4"> 
+    <h5 className='font-dm font-semi-bold text-[18px] text-[#262626]'>Already have account ? Please <Link> Log in</Link></h5>
+    </div>
     </div>
     </form>
 </Container>

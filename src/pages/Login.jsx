@@ -37,7 +37,7 @@ const Login = () => {
         </div>
     </div>
     <div className="py-10">
-    <button className='font-dm font-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-2 hover:text-white hover:bg-black duration-300'><Link >Log in</Link></button>
+    <button className='font-dm font-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-2 hover:text-white hover:bg-black duration-300'><Link to="/login">Log in</Link></button>
     </div>
     <div className="">
         <h2  className='font-dm font-bold text-[38px] text-[#262626] py-10 pt-10'>New Customer</h2>
@@ -45,7 +45,7 @@ const Login = () => {
         <h5 className='w-[640px] font-dm font-semi-bold text-[16px] text-[#262626]]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the. </h5>
     </div>
     <div className="py-10 pb-12">
-        <button className='font-dm font-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-2 hover:text-white hover:bg-black duration-300 '><Link >Continue</Link></button>
+    <Link to="/continue" className='font-dm font-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-2 hover:text-white hover:bg-black duration-300 '>Log in</Link>
     </div>
 
 
