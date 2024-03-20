@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState,password } from 'react'
 import Container from './../components/Container';
 import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import { TiArrowSortedDown } from "react-icons/ti";
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set,push } from "firebase/database";
+import { useNavigate } from 'react-router-dom';
+import { FaRegEye,FaRegEyeSlash } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Signup = () => {
     let [fullName, setFullName]= useState("");
     let [email, setEmail]= useState("");
     let [passwards, setPasswards]= useState("");
+    let [err, setErr]= useState("");
+    let [show, setShow]= useState("false");
+    const auth = getAuth();
+    let navigate = useNavigate()
+    const db = getDatabase();
     let handleFullname =(e) =>{
     setFullName(e.target.value);
     };
@@ -18,8 +27,36 @@ const Signup = () => {
     let handlepassword =(e) =>{
     setPasswards(e.target.value);
     };
-    let handleSubmit =(e)=>{
-    e.preventDefault();
+    let handleSubmit =()=>{
+        if(email){
+            setErr("Plese enter your mail");
+        }else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+        setErr("Please Enter Your Valid Email");
+         }
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((user) => {
+            set(ref(db, 'users/' + user.user.uid), {
+                username: fullName,
+                email: email,
+              }).then(()=>{
+                setEmail("");
+                setErr("");
+              });
+        })
+        .then(()=>{
+        toast('🦄 Wow so easy!')
+       
+        }).then(()=>{
+            setTimeout(()=>{
+            navigate("/login")
+            },2000)
+        })
+        
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
     };
   return (
 <>
@@ -54,8 +91,8 @@ const Signup = () => {
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>E-mail address</h3>
                 <input className="py-3 w-[400px]" type="email" placeholder='company@domain.com' onchange={handleEmail}/>
-                
-            </div>
+                <p className='text-red-800'>{err}</p>
+             </div>
             <div className="w-1/2">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>Telephone</h3>
                 <input className='py-3 w-[400px]' type="phone" placeholder='Your phone number'/>
@@ -107,9 +144,14 @@ const Signup = () => {
             <h3 className='font-dm font-bold text-[30px] text-[#262626] py-10 pt-8'>Your Password</h3>
         </div>
         <div className="flex w-full">
-            <div className="w-1/2">
+            <div className="w-1/2 ">
                 <h3 className='font-dm font-bold text-[20px] text-[#262626] pt-5'>Password</h3>
-                <input className="py-3 w-[400px] font-dm text-base" type="passward" placeholder='passward'  oncharge={handlepassword}/>
+                <div className="w-[46%] relative"> 
+                <span> <input className="py-3 w-[400px] font-dm text-base" type={show ? "text" :"password"} placeholder='passward'  oncharge={handlepassword}/></span>
+           <div onClick={()=>setShow(!show)} className="absolute top-[40%] right-[-30px] translet-y-[-50%]">
+           {show ? <FaRegEye />:<FaRegEyeSlash />}
+           </div>
+          </div>
            
             </div>
             <div className="w-1/2">
@@ -131,10 +173,23 @@ const Signup = () => {
     </div>
     <div className="py-10">
         <div onClick={handleSubmit}> 
-        <button className='font-dm font-semi-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-1 hover:text-white hover:bg-black duration-300'><Link to="/login">Sign in</Link></button>
+        <button className='font-dm font-semi-bold text-[18px] text-[#262626] border-2 border-gray-400 px-14 py-1 hover:text-white hover:bg-black duration-300'><Link>Sign up</Link></button>
+        <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        />
+     
         </div>
    <div className="py-4"> 
-    <h5 className='font-dm font-semi-bold text-[18px] text-[#262626]'>Already have account ? Please <Link> Log in</Link></h5>
+    <h5 className='font-dm font-semi-bold text-[18px] text-[#262626]'>Already have account ? Please <Link to="/login"> Log in</Link></h5>
     </div>
     </div>
     </form>
